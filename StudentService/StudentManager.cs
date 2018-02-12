@@ -5,11 +5,11 @@ using System.Web;
 
 namespace StudentService
 {
-    class StudentManager
+    public class StudentManager : IStudentManager
     {
         public static StudentManager Instance = new StudentManager();
 
-        private StudentManager()
+        public StudentManager()
         {
             _students = new List<Student>();
 

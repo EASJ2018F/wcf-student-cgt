@@ -10,7 +10,12 @@ namespace StudentService
 {
     public class StudentService : IStudentService
     {
-        private StudentManager _students = StudentManager.Instance;
+        private IStudentManager _students;
+
+        public StudentService(IStudentManager studentManager = null)
+        {
+            _students = studentManager ?? StudentManager.Instance;
+        }
 
         public List<Student> GetAllStudents()
         {
