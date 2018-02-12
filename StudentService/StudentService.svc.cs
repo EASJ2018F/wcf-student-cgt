@@ -10,5 +10,31 @@ namespace StudentService
 {
     public class StudentService : IStudentService
     {
+        private StudentManager _students = StudentManager.Instance;
+
+        public List<Student> GetAllStudents()
+        {
+            return _students.GetAllStudents();
+        }
+
+        public Student GetStudent(int id)
+        {
+            return _students.GetStudentById(id);
+        }
+
+        public void DeleteStudent(int id)
+        {
+            _students.DeleteStudent(id);
+        }
+
+        public void EditStudent(Student student)
+        {
+            _students.EditStudent(student);
+        }
+
+        public Student AddStudent(Student student)
+        {
+            return _students.AddStudent(student);
+        }
     }
 }

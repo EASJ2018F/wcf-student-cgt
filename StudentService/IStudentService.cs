@@ -11,5 +11,19 @@ namespace StudentService
     [ServiceContract]
     public interface IStudentService
     {
+        [OperationContract]
+        Student AddStudent(Student student);
+
+        [OperationContract]
+        List<Student> GetAllStudents();
+
+        [OperationContract]
+        Student GetStudent(int id);
+
+        [OperationContract]
+        void EditStudent(Student student);
+
+        [OperationContract]
+        void DeleteStudent(int id);
     }
 }
