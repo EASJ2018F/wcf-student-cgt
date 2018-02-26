@@ -8,38 +8,40 @@ using System.Text;
 
 namespace StudentService
 {
-    public class StudentService : IStudentService
-    {
-        private IStudentManager _students;
+	public class StudentService : IStudentService
+	{
+		private IStudentManager _students;
 
-        public StudentService(IStudentManager studentManager = null)
-        {
-            _students = studentManager ?? StudentManager.Instance;
-        }
+		public StudentService() : this(null) { }
 
-        public List<Student> GetAllStudents()
-        {
-            return _students.GetAllStudents();
-        }
+		public StudentService(IStudentManager studentManager = null)
+		{
+			_students = studentManager ?? StudentManager.Instance;
+		}
 
-        public Student GetStudent(int id)
-        {
-            return _students.GetStudentById(id);
-        }
+		public List<Student> GetAllStudents()
+		{
+			return _students.GetAllStudents();
+		}
 
-        public void DeleteStudent(int id)
-        {
-            _students.DeleteStudent(id);
-        }
+		public Student GetStudent(int id)
+		{
+			return _students.GetStudentById(id);
+		}
 
-        public void EditStudent(Student student)
-        {
-            _students.EditStudent(student);
-        }
+		public void DeleteStudent(int id)
+		{
+			_students.DeleteStudent(id);
+		}
 
-        public Student AddStudent(Student student)
-        {
-            return _students.AddStudent(student);
-        }
-    }
+		public void EditStudent(Student student)
+		{
+			_students.EditStudent(student);
+		}
+
+		public Student AddStudent(Student student)
+		{
+			return _students.AddStudent(student);
+		}
+	}
 }
