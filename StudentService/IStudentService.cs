@@ -8,22 +8,22 @@ using System.Text;
 
 namespace StudentService
 {
-    [ServiceContract]
-    public interface IStudentService
-    {
-        [OperationContract]
-        Student AddStudent(Student student);
+	[ServiceContract]
+	public interface IStudentService
+	{
+		[OperationContract]
+		int AddStudent(Student student);
 
-        [OperationContract]
-        List<Student> GetAllStudents();
+		[OperationContract]
+		List<Student> GetAllStudents();
 
-        [OperationContract]
-        Student GetStudent(int id);
+		[OperationContract]
+		Student GetStudent(int id);
 
-        [OperationContract]
-        void EditStudent(Student student);
+		[OperationContract]
+		void EditStudent(Student student);
 
-        [OperationContract]
-        void DeleteStudent(int id);
-    }
+		[OperationContract]
+		void DeleteStudent(int id);
+	}
 }
